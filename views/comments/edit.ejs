@@ -4,7 +4,7 @@
 
 		<h1>Edit Comment</h1>
 			<div class="form-group row" style="width: 30%; margin: 0; auto;">
-				<form action="/couches/<%= couch_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+				<form action="/couches/<%= couch._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
 					<div class="form-group">
 						<input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
 					</div>					
