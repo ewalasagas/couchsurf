@@ -303,7 +303,7 @@ app.get("/logout", function(req, res) {
 //=====================================
 // SERVER ROUTE
 //=====================================
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("CouchSurf Server Has Started!");
 });
