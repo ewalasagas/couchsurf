@@ -1,4 +1,4 @@
-var Campground = require("../models/couch");
+var Couch = require("../models/couch");
 var Comment = require("../models/comment");
 
 // all the middleare goes here

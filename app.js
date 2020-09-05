@@ -162,7 +162,7 @@ app.put("/couches/:id", middleware.checkCouchOwnership, function(req, res){
 // DELETE COUCH ROUTE
 app.delete("/couches/:id", middleware.checkCouchOwnership, async(req, res) => {
 	try {
-		let foundCouch = await Campground.findById(req.params.id);
+		let foundCouch = await Couch.findById(req.params.id);
 		await foundCouch.remove();
 		res.redirect("/couches");
 	} catch(error) {
@@ -177,7 +177,7 @@ app.delete("/couches/:id", middleware.checkCouchOwnership, async(req, res) => {
 
 //couches new
 app.get("/couches/:id/comments/new", middleware.isLoggedIn, function(req, res){
-    // find campground by id
+    // find couch by id
     console.log(req.params.id);
     Couch.findById(req.params.id, function(err, couch){
         if(err){

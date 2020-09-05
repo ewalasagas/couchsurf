@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var Campground = require("../models/couch");
+var Couch = require("../models/couch");
 
 //INDEX - get all couches list
 router.get("/", function(req, res) {
