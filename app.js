@@ -73,11 +73,11 @@ app.get("/", function(req, res) {
 });
 
 
-//INDEX - get all campgrounds list
+//INDEX - get all couches list
 app.get("/couches", function(req, res) {
 	console.log("we're in INDEX - get all couches list");
 	//console.log(req.user);
-	//get all campgrounds from DB
+	//get all couches from DB
 	Couch.find({}, function(err, allCouches) {
 		if(err) {
 			console.log(err);
@@ -87,7 +87,7 @@ app.get("/couches", function(req, res) {
 	})
 });
 
-//CREATE - add new campground to DB
+//CREATE - add new couches to DB
 app.post("/couches", middleware.isLoggedIn, function(req, res) {
 	//get data from format and add to couches array
 	var name = req.body.name;
@@ -99,7 +99,7 @@ app.post("/couches", middleware.isLoggedIn, function(req, res) {
 		username: req.user.username
 	}
   	var newCouch = {name: name, price: price, image: image, description: descr, author:author}
-    // Create a new campground and save to DB
+    // Create a new couch and save to DB
     Couch.create(newCouch, function(err, newlyCreated){
         if(err){
 			req.flash("error", "Something went wrong");
@@ -107,7 +107,7 @@ app.post("/couches", middleware.isLoggedIn, function(req, res) {
         } else {
             //redirect back to couches page
             console.log(newlyCreated);
-			req.flash("success", "Sucessfully added a new campground");
+			req.flash("success", "Sucessfully added a new couch");
             res.redirect("/couches");
         }
     });
@@ -137,7 +137,7 @@ app.get("/couches/:id", function(req, res){
 //=====================================
 // EDIT/UPDATE COUCHES ROUTE
 //=====================================
-// EDIT CAMPGROUND ROUTE
+// EDIT COUCH ROUTE
 app.get("/couches/:id/edit", middleware.checkCouchOwnership, function(req, res){
 	console.log("we're in edit couch route");
     Couch.findById(req.params.id, function(err, foundCouch){
@@ -206,11 +206,11 @@ app.post("/couches/:id/comments", middleware.isLoggedIn, function(req, res){
                comment.author.username = req.user.username;
                //save comment
                comment.save();
-               campground.comments.push(comment);
-               campground.save();
+               couch.comments.push(comment);
+               couch.save();
                console.log(comment);
 			   req.flash("success", "Sucessfully added comment");
-               res.redirect('/couches/' + campground._id);
+               res.redirect('/couches/' + couch._id);
            }
         });
        }
