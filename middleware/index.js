@@ -7,8 +7,8 @@ var middlewareObj = {};
 middlewareObj.checkCouchOwnership = function(req, res, next) {
 	console.log("I'M IN checkCouchOwnership");
  if(req.isAuthenticated()){
-        Couch.findById(req.params.id, function(err, foundcouch){
-			console.log("Author TOOT: " + foundcouch.author.id);
+        Couch.findById(req.params.id, function(err, foundCouch){
+			console.log("Author TOOT: " + foundCouch.author.id);
 			console.log("\nUser ID: " + req.user._id);
            if(err){
 			   req.flash("error", "Couch not found");
