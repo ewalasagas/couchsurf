@@ -28,7 +28,7 @@ module.exports = mongoose.model("Couch", couchSchema);
 
 /*
 const Comment = require('./comment');
-campgroundSchema.pre('remove', async function() {
+couchSchema.pre('remove', async function() {
 	await Comment.deleteMany({
 		_id: {
 			$in: this.comments
