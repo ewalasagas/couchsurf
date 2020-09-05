@@ -292,7 +292,10 @@ app.get("/logout", function(req, res) {
 //=====================================
 // SERVER ROUTE
 //=====================================
-
-app.listen(3000, function() {
-	console.log("CouchSurf Server started");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
+// app.listen(3000, function() {
+// 	console.log("CouchSurf Server started");
+// });
