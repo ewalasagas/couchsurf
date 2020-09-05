@@ -1,0 +1,82 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col col-3">
+			<p class="lead">
+				CouchSurf
+			</p>
+		</div>
+		<div class="col md-9">
+			<div class="img-thumbnail">
+				<img class="img-fluid" src="<%= couch.image %>">
+				<caption>
+					<h5 class="float-sm-right">$<%= couch.price %>/night</h5>
+					<h4><a href=""><%= couch.name %></a></h4>
+					<p><%= couch.description %></p>
+					<p><em>Submitted by <%= couch.author.username %></em></p>
+				</caption>
+				<% if(currentUser && couch.author.id.equals(currentUser._id)) { %>
+				 	<a class="btn btn-warning" href="/couches/<%= couch._id %>/edit">Edit</a>
+            		<form class="deleteForm" action="/couches/<%= couch._id %>?_method=DELETE" method="POST">
+					<button class="btn btn-danger">Delete</button>
+					</form>
+					<% } %>
+				<div class="well">
+					<div class="text-right">
+						<a class="btn btn-success" href="/couches/<%= couch._id %>/comments/new">Leave a review</a>
+					</div>
+					<hr>
+					<% couch.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="col md-12">
+							<strong><%= comment.author.username %></strong>
+							<span class="float-sm-right">10 days ago</span>
+							<p><%= comment.text %></p>
+							<% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+								<a class="btn btn-warning" href="/couches/<%=couch._id%>/comments/<%=comment._id%>/edit">Edit</a>
+								<form class="deleteForm" action="/couches/<%=couch._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+									<button class="btn btn-danger">Delete</button>
+								</form>
+							<% } %>
+						</div>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	/*
+  function initMap() {
+    var lat = <%= couch.lat %>;
+    var lng = <%= couch.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= couch.name %><br />
+      <%= couch.location %></strong>
+      <p><%= couch.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+  */
+</script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD00KjBFx0JpBRrVCdk-dFeq0yUnnO5fpM&callback=initMap"></script> -->
+
+
+<%- include("../partials/footer") %>

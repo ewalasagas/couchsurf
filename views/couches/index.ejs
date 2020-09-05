@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+		<h1 class="display-4">Welcome to CouchSurf!</h1>
+		<p class="lead">View our hand-picked crowdsourced couches from all over the world for you to stay in!</p>
+		  <p>
+			  <a href="/couches/new" class="btn btn-warning">Add New Couch</a>
+		  </p>
+	  </div>
+	</div>
+
+
+	<div class="container" style="text-align: center;">
+		
+		<div class="row justify-content-md-center" style="">
+
+			<% couches.forEach(function(couch) { %>
+			<div class="col-12 col-md-auto">
+				<figure class="figure">
+				<img src="<%= couch.image %>" width="250" height="150">
+					<figcaption class="figure-caption text-center">
+						<h4><%= couch.name %></h4>
+					</figcaption>
+					<p>
+						<a href="/couches/<%= couch._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</figure>
+			</div>
+			<% }); %>
+
+		</div>
+	</div>
+
+</div>
+
+
+<%- include("../partials/footer") %>

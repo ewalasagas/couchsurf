@@ -1,0 +1,25 @@
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+.img-fluid {
+	width: 100%;
+}
+
+.img-thumbnail {
+	padding: 0;
+}
+
+.img-thumbnail h4, h5, p{
+	padding: 9px;
+}
+
+.row {
+	padding: 9px;
+}
+
+.deleteForm {
+	display: inline;
+}
+
