@@ -5,6 +5,16 @@ var axios 	= require("axios");
 var path	= require("path");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+mongoose.connect('mongodb+srv://elaine09:Bella&Pudg3@cluster-couchsurf.2y3tp.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
+
 var flash = require("connect-flash");
 var Couch = require("./models/couch");
 var methodOverride = require("method-override");
@@ -30,11 +40,12 @@ var options = {
 
 //seedDB();
 mongoose.set("useFindAndModify", false);
-mongoose.connect("mongodb://localhost/couch_surf", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+//mongoose.connect("mongodb://localhost/couch_surf", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+
 
 //PASSPORT CONFIGURATION 
 app.use(methodOverride('_method'));
