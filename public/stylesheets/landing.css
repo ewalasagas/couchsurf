@@ -1,7 +1,11 @@
 body {
 	background-color: black;
-    font-family: 'Amatic SC';
-	font-size: 22px;
+}
+
+h1 {
+	font-family: 'Amatic SC';
+	font-size: 100px;
+	font-weight: 5px;
 }
 
 #landing-header {

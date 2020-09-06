@@ -1,13 +1,39 @@
 <%- include("partials/header") %>
 
-<h1>Login!</h1>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
 
-<form action="/login" method="POST">
-	<input type="text" name="username" placeholder="username">
-	<input type="password" name="password" placeholder="password">
-	<button>
-		Submit
-	</button>
-</form>
+				<div class="d-flex justify-content-center form_container">
+					<form action="/login" method="POST">
+						<h1 style="text-align:center;">
+							<i class="em em-small_airplane" aria-role="presentation" aria-label=""></i>
+						</h1>
+						<div class="navbar-brand" style="text-align: center;">
+							<h1>CouchSurfing</h1> 
+							for the Modern Traveler!
+						</div>
+						
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="username" class="form-control input_user" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" placeholder="password">
+						</div>
+
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<button class="btn btn-success">Login</button>
+					   	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <%- include("partials/footer") %>

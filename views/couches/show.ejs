@@ -1,12 +1,12 @@
 <%- include("../partials/header") %>
 <div class="container">
 	<div class="row">
-		<div class="col col-3">
-			<p class="lead">
-				CouchSurf
-			</p>
-		</div>
-		<div class="col md-9">
+		
+	<p class="display-4">
+		<%= couch.name %>
+	</p>
+		
+		
 			<div class="img-thumbnail">
 				<img class="img-fluid" src="<%= couch.image %>">
 				<caption>
@@ -43,7 +43,6 @@
 					<% }) %>
 				</div>
 			</div>
-		</div>
 	</div>
 </div>
 
