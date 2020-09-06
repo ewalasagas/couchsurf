@@ -2,7 +2,42 @@
 	background-color:  #ccd1d1;
 } */
 
-.form-control {
+.footer {
+  background: #152F4F;
+  color:white;	
+}
+
+/* .footer{
+  background: #152F4F;
+  color:white;
+  
+  .links{
+    ul {list-style-type: none;}
+    li a{
+      color: white;
+      transition: color .2s;
+      &:hover{
+        text-decoration:none;
+        color:#4180CB;
+        }
+    }
+  }  
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:white;
+      transition: color .2s;
+      &:hover{color:#4180CB}
+    }
+  } 
+  .location{
+    i{font-size: 18px;}
+  }
+  .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+}
+ */
+
+/* .form-control {
   width: 100%;
   height: 150px;
   padding: 12px 20px;
@@ -13,7 +48,7 @@
   font-size: 16px;
   resize: none;
 }
-
+ */
 .alert {
     width:100%;
     height:100%;   
