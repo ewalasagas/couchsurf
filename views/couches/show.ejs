@@ -1,7 +1,7 @@
 <%- include("../partials/header") %>
 <div class="container">
-	<div class="row">
-		
+	<div class="row" style="justify-content: center;">
+	
 	<p class="display-4">
 		<%= couch.name %>
 	</p>
@@ -21,11 +21,13 @@
 					<button class="btn btn-danger">Delete</button>
 					</form>
 					<% } %>
-				<div class="well">
-					<div class="text-right">
-						<a class="btn btn-success" href="/couches/<%= couch._id %>/comments/new">Leave a review</a>
+				<hr>
+				<div class="row">
+					<div class="col md-12">
+						<a class="btn btn-success" href="/couches/<%= couch._id %>/comments/new" style="float: right;">Leave a review</a>
 					</div>
-					<hr>
+				</div>
+				<div class="well">
 					<% couch.comments.forEach(function(comment){ %>
 					<div class="row">
 						<div class="col md-12">

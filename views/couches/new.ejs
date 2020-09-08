@@ -1,39 +1,59 @@
 <%- include("../partials/header") %>
 
-<div class="container">
+<div class="container" id="create_couch">
 
-		<h1>Create a New Couch</h1>
-			<div class="form-group row" style="width: 30%; margin: 0; auto;">
-				<form action="/couches" method="POST">
-				
-					<div class="form-group">
+		<h1 style="text-align: center; font-family: 'Amatic SC'; font-weight: 5px; font-size: 60px;">
+			<i class="em em-house_with_garden" aria-role="presentation" aria-label="HOUSE WITH GARDEN"></i>
+			Create a New Couch</h1>
+		<div class="form-group" style="width: 100%; margin: 0; auto;">
+			<form action="/couches" method="POST">
+
+				<div class="form-group" style="width: 50%;">
+					<label>COUCH NAME:</label>
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-user"></i></span>
 						<input class="form-control" type="text" name="name" placeholder="name">
 					</div>
-					<div class="form-group">
+				</div>
+
+				<label>PRICE PER DAY:</label>
+				<div class="form-group" style="width: 30%;">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-user"></i></span>
 						<input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01">
 					</div>
-					<div class="form-group">
+				</div>
+
+				<div class="form-group">
+					<label>URL IMAGE:</label>
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-user"></i></span>
 						<input class="form-control" type="text" name="image" placeholder="image url">
 					</div>
-					
-					<div class="form-group">
-						<input class="form-control" type="text" name="description" placeholder="description">
-					</div>
-					
-					<div class="form-group">
-						<input class="form-control" type="text" name="location" id="location" placeholder="Yosemite">
-					
-					<div class="form-group">
-						<button class="btn btn-lg btn-success btn-block">Submit!</button>
-					</div>
-						
-				</form>
-			</div>
-		
+				</div>
 
-		<a href="/couches">Back</a>
+				<div class="form-group">
+					<label>DESCRIPTION OF PLACE:</label>
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<!-- <input class="form-control" type="text" name="description" placeholder="description"> -->
+						<textarea class="form-control" type="textarea" name="description" placeholder="Leave a review" style="height: 300px;">Description of your new couch..
+						</textarea>
+					</div>
+				</div>
 
+				<!-- <div class="form-group">
+					<input class="form-control" type="text" name="location" id="location" placeholder="Yosemite"> -->
+
+				<div class="form-group">
+					<button class="btn btn-success">Submit</button>
+					<a href="/couches" style="float: right;">Back</a>
+				</div>
+			</form>
+		</div>
 </div>
 
-
 <%- include("../partials/footer") %>
+
+</body>
+</html>
