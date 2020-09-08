@@ -11,7 +11,7 @@
 				<div class="form-group" style="width: 50%;">
 					<label>COUCH NAME:</label>
 					<div class="input-group-append">
-						<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<span class="input-group-text"><i class=""></i></span>
 						<input class="form-control" type="text" name="couch[name]" placeholder="name" value="<%= couch.name %>">
 					</div>
 				</div>
@@ -19,7 +19,7 @@
 				<label>PRICE PER DAY:</label>
 				<div class="form-group" style="width: 30%;">
 					<div class="input-group-append">
-						<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<span class="input-group-text"><i class=""></i></span>
 						<input class="form-control" type="number" name="couch[price]" value="<%= couch.price %>" min="0.01" step="0.01">
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 				<div class="form-group">
 					<label>URL IMAGE:</label>
 					<div class="input-group-append">
-						<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<span class="input-group-text"><i class=""></i></span>
 						<input class="form-control" type="text" name="couch[image]" placeholder="image url" value="<%= couch.image %>">
 					</div>
 				</div>
@@ -35,7 +35,7 @@
 				<div class="form-group">
 					<label>DESCRIPTION OF PLACE:</label>
 					<div class="input-group-append">
-						<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<span class="input-group-text"><i class=""></i></span>
 						<!-- <input class="form-control" type="text" name="description" placeholder="description"> -->
 						<textarea class="form-control" type="textarea" name="couch[description]" placeholder="description" style="height: 300px;"><%= couch.description %>
 						</textarea>
@@ -48,13 +48,10 @@
 					-->
 				<div class="form-group">
 					<button class="btn btn-success">Save</button>
-					<a href="/couches" style="float: right;">Back</a>
+					<a href="/couches" style="float: right; color: #33a427">Back</a>
 				</div>
 			</form>
 		</div>
 </div>
-
-<%- include("../partials/footer") %>
-
 
 <%- include("../partials/footer") %>
